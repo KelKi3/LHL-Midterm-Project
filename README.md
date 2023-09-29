@@ -90,20 +90,29 @@ By guiding the stakeholders to our dashboards, they can access clear and compreh
 
 Using the interactive map, users have the ability to adjust the slider, advancing through the hours to witness how the primary cause of collisions shift throughout the day. The provided examples offer a glimpse into this dynamic. Majority of accidents across the state at 5pm are caused by speeding, while 6 hours later at, 11pm most collisions can be attributed to driving under the influence.
 
+
 <img src="images/accidents_by_location17.png" alt="Number 1 Cause of Collisions at 4am" width="300"> <img src="images/accidents_by_location23.png" alt="Number 1 Cause of Collisions at 4am" width="300">
 
 Within this dashboard, it is also possible to select the specific age groups in order to see the age specifc data reflected on the map as well on the graph comparing the number of injuries to the number of fatalities per hour.
 
 <img src="images/injuries_death_viz.png" alt="Number of injuries vs Fatalities" width="600">
 
-Also included in the visualizations are graphs displaying the most common causes per selectable age group, the prevelant weather conditions causing fatalities and the a comparison of the number of accidents by day of the week, broken down by the leading causes.
+This dashboard is powerful because it can not only show age specific trends, it can inform Officials of what locations are most appropriate to advertise to specific age groups and at what time of the day to advertise for specific causes of collisions.
 
-<img src="images/common_causes.png" alt="Top Violations Ages 20-29" height="350"> <img src="images/weather.png" alt="Weather Realted to Collisions" height="350"> <img src="images/dayoftheweek.png" alt="Top Violations Ages 20-29" height="350">
+In another dashboard, we drill down into more specific details surrounding collisions for the various age groups.  This visualization includes the top causes observed in that group, the prevelant weather conditions causing fatalities and the a comparison of the number of accidents by day of the week, in order to identify which days are the most dangerous.   This visualization also provides the liklihood of injury and fatality broken down by the leading causes of collisions for that age group.  Furthermore, as an added feature, we provided a parameter than can toggle between genders.  It's interesting to see, and not surprising, that even among a specific age group, we have sometimes substantial differences in the collision data for each gender.
 
+<img src="images/common_causes.png" alt="Top Violations Ages 20-29" height="350"> <img src="images/weather.png" alt="Weather Related to Collisions Ages 20-29" height="350"> <img src="images/dayoftheweek.png" alt="Most Dangerous Day of the Week Ages 20-29" height="350"> <img src="images/QoQ_and_fatalcollisions.png" alt="Fatality Counts and QoQ Change Ages 20-29" height="300">
 
+Our Stakeholders can leverage this age-specific data to grab the attention of their intended audience more effectively, and ultimately save more lives.
 
 ## Challenges?
-
+- Finding a dataset that was large enough and detailed enough to work with.  Our dataset ended up being initially too large for our computers to compute and perform operations on it without a substatial wait time.  Determining how to reduce the size of this set, while still maintaining the integrety of the data was difficult.
+- Figuring out how to work together on a project in separate places.  Keeping track of who's done what and what still needs to be done, and who has updated the files in git most recently (and it's implications) was a challenge - This required consistent and frequent communication between us.
+- Github actions via command line is a real struggle.  Pushing and pulling and branches and merges can be challenging to navigate.
+- A more vague direction and less detailed instructions for this project made it difficult to determine exactly when we were "done".
+ 
 ## Future Goals
-
+- Expand the dataset to include more years of data to provide a better image of historical data, and better inform our stakeholders. We need more powerful computing for this.
+- Use an even broader data set that including information from other areas.
+- Make this a more deployable and re-usable for other states or provinces, so more locations can benefit from this resource.
 
