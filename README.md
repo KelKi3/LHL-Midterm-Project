@@ -2,42 +2,44 @@
 
 ## Project Goals
 
-There are too many car accidents and far too many lives lost from them.  We believe that advertising the same message to an entire population is not the most effective method for capturing their attention and conveying the critical information that they need know.  We feel that developing an age-specific approach in advertising is a more impactful strategy.  In order to achieve this, we will conduct a thorough analysis of the collision data to find specific insights and information, which will further the ability to engage and captivate our target demographics.
+There are too many car accidents and far too many lives lost from them.  We believe that advertising the same message to an entire population is not the most effective method for capturing their attention and conveying the critical information that they need know.  We feel that developing an age-specific approach in advertising is a more impactful strategy. In order to achieve this, we will conduct a thorough analysis of collision data to find specific insights and information, which will further the ability to engage and captivate our target demographics.
 
-Our Stakeholders in this project are the State Officials who would create the advertising campaigns to reduce collisions.  We seek to prove to them why we should take a more age-driven advertising approach and then create a user friendly, intuitive, and effective dashbaord that can be used to collect these age-driven insights.
+Our primary stakeholders are the State Officials responsible for creating the advertising campaigns aimed at reducing collisions. Our objective is to demonstrate the merits of a more age-driven advertising strategy and to create a user friendly, intuitive, and effective dashbaord to gather these age-driven insights.
 
 ## Process
 
 1.  Take an exorbitant amount of time searching the world for an interesting dataset.
 
 2.  Extract collision data from DB using SQLite.
-    - See File: "DB_Extraction.ipynb"
+    - See File: ["DB_Extraction.ipynb"](https://github.com/loewen-behold/LHL-Midterm-Project/blob/main/notebooks/DB_Extraction.ipynb)
 
 3.  Using Python to conduct a thorough cleaning process and comprehensive exploratory data analysis to become familiar with the data and how it can be leveraged to acheive our goals.
-    - See File: "Collisions_Cleaning_Engineering.ipynb" --> Cleaning, modification, and engineering of tables.  
-    - See File: "EDA_Statistics_ProbabilityCalculations.ipynb" --> Exploration, Analaysis, Insights used to justify the project goals.
+    - See File: ["Collisions_Cleaning_Engineering.ipynb"](https://github.com/loewen-behold/LHL-Midterm-Project/blob/main/notebooks/Collisions_Cleaning_Engineering.ipynb) --> Cleaning, modification, and engineering of tables.  
+    - See File: ["EDA_Statistics_ProbabilityCalculations.ipynb"](https://github.com/loewen-behold/LHL-Midterm-Project/blob/main/notebooks/EDA_Statistics_ProbabilityCalculations.ipynb) --> Exploration, Analaysis, Insights used to justify the project goals.
 
 4. Structuring of the data into meaningful arrangements and creating interesting and informative visualizations in order to better convey the importance of the message and give insights on how to reduce the number of collisions by appropriately engaging the specific age groups.  
 
 # Results
 
-Our first objective was to provide enough evidence to justify and convince State Officials that age-specific advertising and collision awareness would be a more effective strategy than simply advertising in broad strokes accross the entire population.  In order to show this, we needed to prove that there is substantial enough variation in collision data between the distinct age groups.
+Our first objective was to provide enough evidence to justify and convince State Officials that age-specific advertising and collision awareness would be a more effective strategy over generic advertising targeting the entire population. To show this, we needed to prove that there is enough variation in collision data across the various age groups.
 
-When comparing the ratio of fatalities to the ratio of collisions by the hour, we observed that there are times of the day that are far more dangerous than others.  Despite the fact that the busiest times of the day indeed translate to more collisions during those times, these were not the times with highest ratio of fatalities per collision.  It was actually the least busy driving times of the day that proved to have the highest ratio.
+When comparing the fatality-to-collision ratios across the different hours of the day, we observed periods that are far more dangerous than others. While the busiest times of the day did translate to more collisions, these were not the times with highest ratio of fatalities per collision. It was actually the least busy driving times that proved to have the highest ratio.
 
 <img src="images/ratio_of_fatalities_to_collisions.png" alt="Proportion of Fatalities to Collisions by Hour" width="400" height="300">
+<br>
+<br>
 
 
-Key Take-aways:
+**Key Take-aways:**
 - An accident that occurs in the early hours of the morning (between 1 - 4am) is up to 4x more likely to be fatal than accidents that occur during peak traffic hours (between 3 - 6 pm).
-- If the amount of cars on the road or even number of accidents per hour are not contributors to this observation, something else is causing this disproportionate rate in fatalites in the early morning collisions.
+- If the volume of cars on the road nor the frequency of accidents per hour are not factors contributing to the above observation, then there must be another underlying cause responsible for the disproportionate rate of fatalities in early morning collisions.
 
-New Questions that emerge:
-- Could it be the cause of the accident that drives this observation? Is there more speeding, driving under the influence, tired driving happening during this time?
-- Could it be that people display different driving habits and practices during these times, such as not wearing a seatbelt, or using their phones.
+**New Questions that emerge:**
+- Could it be the cause of the accident that drives this observation? Is there more speeding, driving under the influence or tired driving happening during this time?
+- Could it be that people display different driving habits and practices during these times, such as not wearing a seatbelt, or using their phones?
 - Is this observation age specific? Or is this proportionality consistent accross age groups?
 
-While exploring this last question of whether this is age specific, we found that the general distributions of the ratios of fatalities to collisions was consistent across age ranges.  However, we saw a stark difference in the overall probability of fatalities between these groups.
+While exploring whether this is an age specific phenomenon, we found that the general distributions of the ratios of fatalities to collisions were consistent across all age ranges. However, we saw a stark difference in the overall probability of fatalities between these groups.
 
 <table>
   <tr>
@@ -48,7 +50,7 @@ While exploring this last question of whether this is age specific, we found tha
   </tr>
 </table>
 
-Taking the average fatality rates for all hours for each of the different age groups to compare these rates to one another, we can see more clearly how the different groups face different risk of fatality.
+Taking the average fatality rates for each age group across all hours and comparing the rates to one another, we can see more clearly how the different groups face varying levels of fatality risk.
 
 <table>
   <tr>
@@ -57,11 +59,11 @@ Taking the average fatality rates for all hours for each of the different age gr
   </tr>
 </table>
 
-When comparing this chart to the distribution of collisions by age, we can see that as the age of the driver increases, the number of collisions decreases. This might cause us to believe that the most dangerous drivers on the roads are ages 15 - 30. However, when we look at the fatality rates, we see that the older someone gets, the more likely their collision will result in a fatality. Thus, fatality rates by age and the number of collisions by age are inversely proportional. In other words, even though there may be more accidents caused by younger drivers, we see that the nature of collisions grow increasingly more fatal as drivers get older.
+When looking at the distribution of collisions by age in the chart above, we can see that as the age of the driver increases, the frequency of collisions decreases. This observation might cause one to believe that the most dangerous drivers are between the ages of 15 and 30. However, when we compare this with the average fatality rate within each age group, we see that as individuals grow older, it becomes more likely that their collisions will result in a fatality. Thus, fatality rates and collision numbers by age are inversely proportional. Even though there may be more accidents caused by younger drivers, the severity of the collisions increase as drivers get older.
 
-Admittedly, there may be other factors at play here. It could be something as simple as the older you get, the more frail you get, and thus are more likely to be killed in an accident. Although, the underlying issues that cause this observation is likely more complicated than that.
+There may be other factors at play here. It could be something as simple as the older you get, the more frail you get, and thus are more likely to be killed in an accident. However, the underlying issues that cause this observation are likely more complicated than that.
 
-After diving a little deeper into the specific causes of collisions, we found that some were definitively more prevalent amongst different age groups. For example, DUIs were more prevalent among those ages 20-40, whereas falling asleep behind the wheel more prevalent among the more aged population.
+After diving a little deeper into the specific causes of collisions, we found that some were definitively more prevalent amongst different age groups than others. For example, DUIs were more prevalent among those ages 20-40, whereas falling asleep behind the wheel was more prevalent among the more aged population.
 
 <table>
   <tr>
@@ -70,14 +72,35 @@ After diving a little deeper into the specific causes of collisions, we found th
   </tr>
 </table>
 
-Key-Insights:
+**Key-Insights:**
 - Ages 20-40 are 20% more likely to be driving under the influence than a person in their 40s, 50% more likely to be driving under the influence than a person in their 50s, and 100% more likely to be driving under the influence than a person in their 60s.
 - The ratios are fairly even across the age-groups, but we do see a small uptick in drivers between the ages of 30-39, but a major increase (by nearly 3 times) in the 80-89 range.
 
-We conclude that it's been made clear that there are certain causes of collisions that are more prevalant for one age group that is not as prevalent for the next.  Thus, when it comes to marketing and advertising campaigns aimed at the public to minimize accidents and associated injuries or fatalities, a one-size-all approach may not be the most effective method. We should instead be tailoring the advertisments to speak directly to the different age-groups in order to capture more people's attention, whereby being more effective in generating awareness of collisions and hopefully encourage better driving habits.
+We conclude that there are certain causes of collisions that are more prevalant for one age group that is not as prevalent for the next.  Thus, when it comes to marketing and advertising campaigns aimed at the public to minimize accidents and associated injuries or fatalities, a one-size-all approach may not be the most effective method. We should instead be tailoring the advertisments to speak directly to the different age-groups in order to capture more people's attention, whereby being more effective in generating awareness of collisions and hopefully encourage better driving habits.
 
-Next Steps:
+**Next Steps:**
+
 We will use Tableau to create dashboards for our State officials to use and interact with to glean more specific collision details for each age-group.
+
+When considering strategies to enhance the safety of the drivers in all our age groups, it is also important to look at the factors surrounding these collisions in order to identify the most effective ways to reach our target audiences. 
+
+Where are the collisions occuring? Under what conditions? What are the primary causes associated most frequently each age group?
+
+By guiding the stakeholders to our dashboards, they can access clear and comprehensible visualizations that provide pertinent information at a glance. - See File: ["Collision_Presentation.pdf"](https://github.com/loewen-behold/LHL-Midterm-Project/blob/main/Collision_Presentation.pdf)
+
+Using the interactive map, users have the ability to adjust the slider, advancing through the hours to witness how the primary cause of collisions shift throughout the day. The provided examples offer a glimpse into this dynamic. Majority of accidents across the state at 5pm are caused by speeding, while 6 hours later at, 11pm most collisions can be attributed to driving under the influence.
+
+<img src="images/accidents_by_location17.png" alt="Number 1 Cause of Collisions at 4am" width="300"> <img src="images/accidents_by_location23.png" alt="Number 1 Cause of Collisions at 4am" width="300">
+
+Within this dashboard, it is also possible to select the specific age groups in order to see the age specifc data reflected on the map as well on the graph comparing the number of injuries to the number of fatalities per hour.
+
+<img src="images/injuries_death_viz.png" alt="Number of injuries vs Fatalities" width="600">
+
+Also included in the visualizations are graphs displaying the most common causes per selectable age group, the prevelant weather conditions causing fatalities and the a comparison of the number of accidents by day of the week, broken down by the leading causes.
+
+<img src="images/common_causes.png" alt="Top Violations Ages 20-29" height="350"> <img src="images/weather.png" alt="Weather Realted to Collisions" height="350"> <img src="images/dayoftheweek.png" alt="Top Violations Ages 20-29" height="350">
+
+
 
 ## Challenges?
 
